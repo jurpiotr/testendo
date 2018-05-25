@@ -1,6 +1,6 @@
 <ng-container *ngIf="tasksList.length > 0; else noTask;">
   <p [ngStyle]="{color: getColor()}">
-    Zadania do wykonania: {{tasksList.length}}
+    Tasks to do: {{tasksList.length}}
   </p>
   <ul>
     <li appDate [date]="task.created" *ngFor="let task of tasksList | sortName; let odd = odd" [ngClass]="{'odd-li': odd, 'last-li': tasksList.length===1}">
@@ -11,5 +11,5 @@
   </ul>
 </ng-container>
 <ng-template #noTask>
-  <p>Brak zadań</p>
+  <p>No tasks</p>
 </ng-template>
